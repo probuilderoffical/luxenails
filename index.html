@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211b1d">
+  <meta name="description" content="Luxe Nails — modern nail care, thoughtful details, and polished style. Explore services, inspiration, and current booking information.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Luxe Nails — Nail Care, Elevated">
+  <meta property="og:description" content="Modern nail care, thoughtful details, and polished style.">
+  <meta property="og:image" content="https://images.pexels.com/photos/6135675/pexels-photo-6135675.jpeg?auto=compress&cs=tinysrgb&w=1600">
+  <title>Luxe Nails — Nail Care, Elevated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#211b1d;
+      --ink-2:#5f5356;
+      --paper:#fbf7f4;
+      --paper-2:#f2e8e4;
+      --rose:#b7787f;
+      --rose-dark:#8e535b;
+      --line:rgba(33,27,29,.12);
+      --white:#fff;
+      --shadow:0 22px 70px rgba(53,35,39,.14);
+      --radius:28px;
+      --radius-sm:18px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button{color:inherit}
+    ::selection{background:#d8a9ae;color:#211b1d}
+    .skip-link{
+      position:fixed;left:1rem;top:-100px;z-index:1000;
+      padding:.75rem 1rem;background:var(--ink);color:#fff;border-radius:10px;
+    }
+    .skip-link:focus{top:1rem}
+    .shell{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:.55rem;
+      text-transform:uppercase;letter-spacing:.18em;font-weight:700;font-size:.74rem;color:var(--rose-dark)
+    }
+    .eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,.display{font-family:"Italiana",Georgia,serif;font-weight:400;letter-spacing:-.025em}
+    h1{font-size:clamp(3.6rem,8vw,7.7rem);line-height:.9;margin:.45rem 0 1.35rem}
+    h2{font-size:clamp(2.5rem,5vw,4.6rem);line-height:1;margin:.6rem 0 1rem}
+    h3{font-size:1.05rem;margin-bottom:.5rem}
+    p{color:var(--ink-2)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:.65rem;
+      min-height:52px;padding:.82rem 1.25rem;border-radius:999px;
+      font-weight:700;border:1px solid transparent;transition:.2s ease;
+    }
+    .btn-primary{background:var(--ink);color:#fff}
+    .btn-primary:hover{transform:translateY(-2px);background:#34292c;box-shadow:0 12px 30px rgba(33,27,29,.18)}
+    .btn-secondary{border-color:var(--line);background:rgba(255,255,255,.55)}
+    .btn-secondary:hover{background:#fff;border-color:rgba(33,27,29,.22)}
+    .btn svg{width:18px;height:18px}
+    header{
+      position:fixed;inset:0 0 auto;z-index:100;
+      background:rgba(251,247,244,.82);backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(33,27,29,.06)
+    }
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:1.25rem}
+    .brand{display:flex;align-items:center;gap:.72rem;font-weight:700;letter-spacing:.12em}
+    .brand-mark{
+      width:36px;height:36px;border:1px solid var(--ink);border-radius:50%;
+      display:grid;place-items:center;font-family:"Italiana",serif;font-size:1.2rem
+    }
+    .nav-links{display:flex;align-items:center;gap:1.6rem;font-size:.92rem;font-weight:600}
+    .nav-links>a:not(.btn){position:relative}
+    .nav-links>a:not(.btn)::after{
+      content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--ink);transition:.2s
+    }
+    .nav-links>a:not(.btn):hover::after{right:0}
+    .menu-btn{display:none;border:0;background:none;padding:.5rem}
+    .menu-btn svg{width:25px;height:25px}
+    main{overflow:hidden}
+    .hero{min-height:100svh;padding:126px 0 70px;display:flex;align-items:center;position:relative}
+    .hero::before{
+      content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+      background:radial-gradient(circle,rgba(202,157,163,.36),rgba(202,157,163,0) 68%);
+      top:-80px;left:-210px;pointer-events:none
+    }
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:5vw;align-items:center}
+    .hero-copy{position:relative;z-index:1}
+    .hero-copy>p{max-width:610px;font-size:1.08rem;margin-bottom:1.7rem}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem}
+    .mini-note{display:flex;align-items:center;gap:.65rem;margin-top:1.4rem;color:var(--ink-2);font-size:.86rem}
+    .mini-note span{width:8px;height:8px;border-radius:50%;background:var(--rose)}
+    .hero-media{position:relative}
+    .hero-image{
+      width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:180px 180px 32px 32px;
+      box-shadow:var(--shadow);filter:saturate(.86) contrast(.96)
+    }
+    .floating-card{
+      position:absolute;left:-54px;bottom:42px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.9);box-shadow:0 18px 50px rgba(53,35,39,.16);
+      padding:1rem 1.15rem;border-radius:18px;min-width:184px
+    }
+    .floating-card strong{display:block;font-family:"Italiana",serif;font-size:1.7rem;font-weight:400}
+    .floating-card small{color:var(--ink-2)}
+    .marquee{
+      border-block:1px solid var(--line);white-space:nowrap;overflow:hidden;background:rgba(255,255,255,.35)
+    }
+    .marquee-track{display:flex;width:max-content;animation:scroll 28s linear infinite;padding:1.05rem 0}
+    .marquee span{display:flex;align-items:center;gap:1.4rem;padding-right:1.4rem;text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:700}
+    .marquee i{width:5px;height:5px;border-radius:50%;background:var(--rose);display:inline-block}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+    section{padding:110px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:3rem}
+    .section-head p{max-width:500px;margin-bottom:.35rem}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .service-card{
+      min-height:270px;padding:1.65rem;border:1px solid var(--line);border-radius:var(--radius-sm);
+      background:rgba(255,255,255,.38);display:flex;flex-direction:column;transition:.25s ease
+    }
+    .service-card:hover{transform:translateY(-5px);background:#fff;box-shadow:0 18px 48px rgba(53,35,39,.09)}
+    .service-icon{
+      width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+      background:var(--paper-2);margin-bottom:2.2rem
+    }
+    .service-icon svg{width:21px;height:21px}
+    .service-card p{font-size:.93rem;margin-bottom:0}
+    .service-meta{margin-top:auto;padding-top:1.2rem;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:var(--rose-dark);font-weight:700}
+    .experience{background:var(--ink);color:#fff;position:relative}
+    .experience p{color:#d9cfd2}
+    .experience-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:6vw;align-items:center}
+    .experience-media{position:relative}
+    .experience-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px}
+    .experience-media::after{
+      content:"L";position:absolute;right:-34px;top:-68px;font-family:"Italiana",serif;
+      font-size:11rem;line-height:1;color:rgba(255,255,255,.08)
+    }
+    .pill-row{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.7rem 0 2rem}
+    .pill{border:1px solid rgba(255,255,255,.17);padding:.55rem .78rem;border-radius:999px;font-size:.82rem;color:#f1e9eb}
+    .principles{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+    .principle{padding-top:1rem;border-top:1px solid rgba(255,255,255,.14)}
+    .principle strong{display:block;margin-bottom:.2rem}
+    .principle span{font-size:.87rem;color:#cbbdc1}
+    .gallery-head{text-align:center;max-width:720px;margin:0 auto 2.5rem}
+    .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:230px;gap:12px}
+    .gallery-item{position:relative;overflow:hidden;border-radius:18px;background:#eadfdb}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;filter:saturate(.88)}
+    .gallery-item:hover img{transform:scale(1.045)}
+    .gallery-item:nth-child(1){grid-column:span 5;grid-row:span 2}
+    .gallery-item:nth-child(2){grid-column:span 3}
+    .gallery-item:nth-child(3){grid-column:span 4}
+    .gallery-item:nth-child(4){grid-column:span 4}
+    .gallery-item:nth-child(5){grid-column:span 3}
+    .gallery-item:nth-child(6){grid-column:span 5}
+    .gallery-caption{
+      position:absolute;inset:auto 12px 12px;padding:.48rem .68rem;border-radius:999px;
+      background:rgba(255,255,255,.84);backdrop-filter:blur(8px);font-size:.75rem;font-weight:700
+    }
+    .booking{
+      padding:0 0 110px
+    }
+    .booking-card{
+      position:relative;overflow:hidden;border-radius:38px;background:var(--paper-2);
+      padding:clamp(2rem,6vw,5.5rem);display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center
+    }
+    .booking-card::before{
+      content:"";position:absolute;width:430px;height:430px;border-radius:50%;right:-180px;top:-230px;
+      background:rgba(183,120,127,.15)
+    }
+    .booking-card p{max-width:600px}
+    .booking-aside{
+      justify-self:end;max-width:360px;padding:1.5rem;border-left:1px solid rgba(33,27,29,.12);position:relative
+    }
+    .booking-aside p{font-size:.9rem}
+    .booking-aside .btn{width:100%}
+    .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:6vw}
+    .faq-list{border-top:1px solid var(--line)}
+    details{border-bottom:1px solid var(--line);padding:1.15rem 0}
+    summary{
+      list-style:none;cursor:pointer;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:1rem
+    }
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-size:1.35rem;font-weight:400;color:var(--rose-dark)}
+    details[open] summary::after{content:"−"}
+    details p{padding-right:2rem;margin:.75rem 0 0;font-size:.93rem}
+    footer{border-top:1px solid var(--line);padding:34px 0 42px}
+    .footer-grid{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .footer-grid p{margin:0;font-size:.82rem}
+    .footer-links{display:flex;gap:1rem;font-size:.82rem;font-weight:600}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    :focus-visible{outline:3px solid rgba(183,120,127,.5);outline-offset:4px}
+    @media (max-width:900px){
+      .nav-links{
+        position:fixed;inset:76px 18px auto;background:rgba(251,247,244,.98);border:1px solid var(--line);
+        border-radius:18px;padding:1rem;display:none;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)
+      }
+      .nav-links.open{display:flex}
+      .nav-links .btn{width:100%}
+      .menu-btn{display:block}
+      .hero{padding-top:116px}
+      .hero-grid,.experience-grid,.booking-card,.faq-grid{grid-template-columns:1fr}
+      .hero-grid{gap:3rem}
+      .hero-copy{max-width:700px}
+      .hero-media{max-width:640px;margin-inline:auto}
+      .floating-card{left:18px}
+      .services-grid{grid-template-columns:1fr 1fr}
+      .experience-grid{gap:3rem}
+      .experience-media{max-width:620px}
+      .booking-aside{justify-self:start;border-left:0;border-top:1px solid var(--line);padding:1.5rem 0 0;max-width:560px}
+    }
+    @media (max-width:650px){
+      .shell{width:min(var(--max),calc(100% - 28px))}
+      h1{font-size:clamp(3.2rem,16vw,5.3rem)}
+      section{padding:82px 0}
+      .hero{padding-bottom:56px}
+      .section-head{display:block;margin-bottom:2rem}
+      .services-grid{grid-template-columns:1fr}
+      .service-card{min-height:230px}
+      .principles{grid-template-columns:1fr}
+      .gallery-grid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:220px}
+      .gallery-item:nth-child(n){grid-column:span 1;grid-row:span 1}
+      .gallery-item:nth-child(1),.gallery-item:nth-child(6){grid-column:span 2}
+      .booking{padding-bottom:82px}
+      .booking-card{border-radius:26px}
+      .floating-card{bottom:20px;left:12px;min-width:160px}
+      .brand{font-size:.86rem}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav class="shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Luxe Nails home">
+        <span class="brand-mark" aria-hidden="true">L</span>
+        <span>LUXE NAILS</span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary" href="https://share.google/Tz9jRHnGa9MSGcZCS" target="_blank" rel="noopener">
+          Book / Contact
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Modern nail care</span>
+          <h1>Nail care,<br>elevated.</h1>
+          <p>A polished destination for beautiful nails, thoughtful details, and a modern self-care ritual. Explore the look, find your service, then use the official Google profile for current availability.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://share.google/Tz9jRHnGa9MSGcZCS" target="_blank" rel="noopener">
+              Check availability
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="#gallery">Explore the look</a>
+          </div>
+          <div class="mini-note"><span aria-hidden="true"></span>Current hours, directions and contact details are available on Google.</div>
+        </div>
+        <div class="hero-media reveal">
+          <img class="hero-image" src="https://images.pexels.com/photos/6135675/pexels-photo-6135675.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A professional manicure in progress" width="900" height="1125" fetchpriority="high">
+          <div class="floating-card" aria-hidden="true">
+            <strong>Made for you</strong>
+            <small>Shape · finish · detail</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Manicure <i></i> Gel <i></i> Nail art <i></i> Extensions <i></i> Pedicure <i></i> Care <i></i></span>
+        <span>Manicure <i></i> Gel <i></i> Nail art <i></i> Extensions <i></i> Pedicure <i></i> Care <i></i></span>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Service menu</span>
+            <h2>Pick your finish.</h2>
+          </div>
+          <p>Use this as a guide to the kind of appointment you are looking for. For the exact current menu, pricing, and availability, contact Luxe Nails through the official Google profile.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 20c4 0 10-3 10-9V4h-4v7c0 2-2 3-4 3H5v6h2Z"/><path d="M13 7h4"/></svg></div>
+            <h3>Classic Manicure</h3>
+            <p>Shape, tidy and finish for a clean, polished everyday look.</p>
+            <span class="service-meta">Natural + refined</span>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 3 8 0 2 5-6 13L6 8l2-5Z"/><path d="M6 8h12"/></svg></div>
+            <h3>Gel Finish</h3>
+            <p>A glossy, durable finish when you want color that stays looking fresh.</p>
+            <span class="service-meta">Gloss + longevity</span>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 18 18 6M8 6l10 10M6 10l8 8"/></svg></div>
+            <h3>Extensions</h3>
+            <p>Added length and shape with a finish tailored to your preferred silhouette.</p>
+            <span class="service-meta">Length + structure</span>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M8 13c2-4 6-4 8 0M9 8h.01M15 8h.01"/></svg></div>
+            <h3>Nail Art</h3>
+            <p>Minimal accents or statement details that make your set feel personal.</p>
+            <span class="service-meta">Detail + expression</span>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 4c0 5-2 8-2 11a5 5 0 0 0 10 0c0-3-2-6-2-11M17 7v9a3 3 0 0 0 3 3"/></svg></div>
+            <h3>Pedicure</h3>
+            <p>A foot-care reset focused on neat detail, comfort, and a polished finish.</p>
+            <span class="service-meta">Reset + relax</span>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M5 8c4 0 7-2 7-5M19 16c-4 0-7 2-7 5"/></svg></div>
+            <h3>Removal & Care</h3>
+            <p>Thoughtful removal and tidy-up when it is time to refresh or reset your nails.</p>
+            <span class="service-meta">Refresh + protect</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="shell experience-grid">
+        <div class="experience-media reveal">
+          <img src="https://images.pexels.com/photos/6135681/pexels-photo-6135681.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Nail technician carefully working on a manicure" width="900" height="1125" loading="lazy">
+        </div>
+        <div class="reveal">
+          <span class="eyebrow" style="color:#d9a9ae">The Luxe approach</span>
+          <h2>Beautiful starts<br>with the details.</h2>
+          <p>Great nails are more than a color choice. The experience should feel considered from shape and finish to the small details that make a set feel like yours.</p>
+          <div class="pill-row" aria-label="Experience highlights">
+            <span class="pill">Thoughtful consultation</span>
+            <span class="pill">Modern finishes</span>
+            <span class="pill">Detail-led styling</span>
+            <span class="pill">Care-minded choices</span>
+          </div>
+          <div class="principles">
+            <div class="principle"><strong>Come with an idea.</strong><span>Bring inspiration, a color, or a mood and use it as the starting point.</span></div>
+            <div class="principle"><strong>Leave with a look.</strong><span>Choose a finish that fits your style, routine, and occasion.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="shell">
+        <div class="gallery-head reveal">
+          <span class="eyebrow">Inspiration</span>
+          <h2>A little nail moodboard.</h2>
+          <p>From soft neutrals to intricate details, use these looks as inspiration for your next appointment.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal"><img src="https://images.pexels.com/photos/30294773/pexels-photo-30294773.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Detailed manicure work in a modern salon" loading="lazy"><figcaption class="gallery-caption">Precision</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="https://images.pexels.com/photos/34930100/pexels-photo-34930100.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Manicure tools and professional nail care" loading="lazy"><figcaption class="gallery-caption">Care</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="https://images.pexels.com/photos/34132695/pexels-photo-34132695.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Close-up manicure process" loading="lazy"><figcaption class="gallery-caption">Detail</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="https://images.pexels.com/photos/34930141/pexels-photo-34930141.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Professional nail manicure close-up" loading="lazy"><figcaption class="gallery-caption">Finish</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="https://images.pexels.com/photos/6135675/pexels-photo-6135675.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Manicure service close-up" loading="lazy"><figcaption class="gallery-caption">Shape</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="https://images.pexels.com/photos/6135681/pexels-photo-6135681.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Professional nail care session" loading="lazy"><figcaption class="gallery-caption">Ritual</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking">
+      <div class="shell">
+        <div class="booking-card reveal">
+          <div>
+            <span class="eyebrow">Ready when you are</span>
+            <h2>Your next set<br>starts here.</h2>
+            <p>Open the official Google profile to see current contact information, directions, hours, and any live booking options available for Luxe Nails.</p>
+          </div>
+          <aside class="booking-aside">
+            <h3>Current business details</h3>
+            <p>We keep time-sensitive information off this page so you always see the latest details directly from the business listing.</p>
+            <a class="btn btn-primary" href="https://share.google/Tz9jRHnGa9MSGcZCS" target="_blank" rel="noopener">
+              Open Google profile
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="shell faq-grid">
+        <div class="reveal">
+          <span class="eyebrow">Good to know</span>
+          <h2>Before you visit.</h2>
+          <p>For anything time-sensitive or specific to your appointment, contact the salon directly through the official Google listing.</p>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>How do I book an appointment?</summary>
+            <p>Use the “Book / Contact” button on this page. It opens the official Google profile where the current contact or booking options can be checked.</p>
+          </details>
+          <details>
+            <summary>Where is Luxe Nails located?</summary>
+            <p>Open the Google profile for the current address, map directions, and location details. This avoids showing stale information on the website.</p>
+          </details>
+          <details>
+            <summary>What are the current prices?</summary>
+            <p>Pricing can vary by service, length, finish, and design detail. Contact Luxe Nails directly for the latest service menu and exact quote.</p>
+          </details>
+          <details>
+            <summary>Can I bring a reference photo?</summary>
+            <p>Reference images are a useful way to communicate shape, color, and design direction. The salon can confirm what is practical for your appointment.</p>
+          </details>
+          <details>
+            <summary>Do you accept walk-ins?</summary>
+            <p>Availability can change, so check the current business listing or contact the salon before travelling if you do not have a confirmed appointment.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">L</span><span>LUXE NAILS</span></div>
+      <p>© <span id="year"></span> Luxe Nails. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="https://share.google/Tz9jRHnGa9MSGcZCS" target="_blank" rel="noopener">Google profile</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('#nav-links');
+
+    menuButton?.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+
+    navLinks?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton?.setAttribute('aria-expanded', 'false');
+        menuButton?.setAttribute('aria-label', 'Open menu');
+      });
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+
+    const observer = 'IntersectionObserver' in window
+      ? new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 })
+      : null;
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      if (observer) observer.observe(el);
+      else el.classList.add('visible');
+    });
+  </script>
+</body>
+</html>
